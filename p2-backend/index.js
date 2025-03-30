@@ -2,8 +2,6 @@ const express = require('express');
 const mongoose = require("mongoose");
 const app = express();
 
-const bcrypt = require('bcrypt');
-
 app.use(express.json());
 
 const port = 3000;
