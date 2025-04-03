@@ -1,10 +1,10 @@
 const express = require('express');
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const app = express();
 
 app.use(express.json());
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const SignupModel = require("./Models/Signup.js");
 const AuctionModel = require("./Models/Auction.js");
@@ -64,7 +64,7 @@ app.get("/getauctiondata", async(req, res) => {
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
-})
+});
 
 mongoose
       .connect("mongodb+srv://edunet:edunet1234@edunetcluster.zet2k9c.mongodb.net/")
