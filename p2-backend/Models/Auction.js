@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-
+//const mongoose = require("mongoose");
+import mongoose from 'mongoose';
 const AuctionSchema = mongoose.Schema(
     {
         title: {
@@ -27,4 +27,5 @@ const AuctionSchema = mongoose.Schema(
 );
 
 const AuctionModel = mongoose.model("Auction", AuctionSchema);
-module.exports = AuctionModel;
+//module.exports = AuctionModel;
+export default AuctionModel;

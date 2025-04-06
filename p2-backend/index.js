@@ -1,13 +1,24 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const app = express();
+// const express = require('express');
+// const mongoose = require('mongoose');
+// const cors = require("cors");
 
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const app = express();
 app.use(express.json());
 
 const port = process.env.PORT || 3000;
 
-const SignupModel = require("./Models/Signup.js");
-const AuctionModel = require("./Models/Auction.js");
+import SignupModel from './Models/Signup.js';
+import AuctionModel from './Models/Auction.js';
+
+// const SignupModel = require("./Models/Signup.js");
+// const AuctionModel = require("./Models/Auction.js");
 
 app.get('/sayhello', (req, res) => {
   res.send('Hello World to Night Class!');
@@ -67,7 +78,7 @@ app.listen(port, () => {
 });
 
 mongoose
-      .connect("mongodb+srv://edunet:edunet1234@edunetcluster.zet2k9c.mongodb.net/")
+      .connect("mongodb+srv://edunet:edunet1234@cluster01.jmty8yz.mongodb.net/")
       .then(() => {
     console.log("Connected to MongoDB");
 }).catch((err) => {

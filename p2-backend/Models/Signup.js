@@ -1,4 +1,5 @@
-const mongoose = require("mongoose");
+//const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const SignupSchema = mongoose.Schema({
     fname: {
@@ -33,4 +34,5 @@ const SignupSchema = mongoose.Schema({
 });
 
 const SignupModel = mongoose.model("Signup", SignupSchema);
-module.exports = SignupModel;
+//module.exports = SignupModel;
+export default SignupModel;
